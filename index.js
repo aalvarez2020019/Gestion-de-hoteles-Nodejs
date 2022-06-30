@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const app = require('./app');
+const registroAdmin = require('./src/controllers/usuario.controller')
 
 
 // BASE DE DATOS 
@@ -11,4 +12,8 @@ mongoose.connect('mongodb://localhost:27017/HotelesGrupo2_IN6BM', { useNewUrlPar
         console.log('El servidor corre sin problemas')
     })
 
+    registroAdmin.registrarAdmin();
+
+
 }).catch(error => console.log(error));
+

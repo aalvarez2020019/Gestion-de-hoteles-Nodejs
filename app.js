@@ -6,6 +6,9 @@ var app = express();
 
 // IMPORTACIONES RUTAS
 const UsuarioRutas = require('./src/routes/usuario.routes');
+const AdminApp = require('./src/routes/adminApp.routes');
+const AdminHotel = require('./src/routes/adminHotel.routes');
+// const AdminAppRutas = require('./src/routes/adminApp.routes');
 
 
 // MIDDLEWARE INTERMEDIARIO
@@ -16,7 +19,7 @@ app.use(express.json());
 app.use(cors());
 
 // CARGA DE RUTAS localhost:3000/api/obtenerProductos
-app.use('/api', UsuarioRutas);
+app.use('/api', UsuarioRutas, AdminApp, AdminHotel);
 
 
 module.exports = app;

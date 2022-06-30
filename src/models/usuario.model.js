@@ -9,7 +9,6 @@ let usuariosSchema = Schema({
   password: String,
   estado: String,
   rol: String,
-
   hotelHospedado: { type: Schema.Types.ObjectId, ref: "hoteles" },
 
 });
